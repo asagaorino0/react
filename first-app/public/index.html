@@ -24,12 +24,30 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <input type="button" id="alert-demo" value="Hello World!">
+<script>
+document.getElementById("alert-demo").onclick = function(){
+    swal('こんにちは^^');
+};
+</script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <script type="text/javascript">
       function testFunc(){
           window.alert("ちわ～")
         }
       {/* window.onload = testFunc */}
-      </script>
+    </script>
       <p><button onClick="testFunc()">Hello World!</button></p>    
     <title>React App みーつけた！</title>
   </head>
