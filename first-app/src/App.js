@@ -7,7 +7,8 @@ function App() {
     window.alert('Hello world')
   }
   const name = 'eriko';
-  const [count, setCount] = useState(0);
+
+  const [count, setCount] = useState(1000);
 
   const increment = () => {
     setCount(count + 1);
@@ -21,6 +22,12 @@ function App() {
     setCount(count - 1);
     console.log(count);
   };
+  const zero = () => {
+    setCount(0);
+    console.log(count);
+  };
+
+
 
   return (
     <div className="App">
@@ -43,8 +50,12 @@ function App() {
           >button2</button>
 
           <button onClick={increment}>up</button>
+
           <button onClick={yokiyoki}>いいね。</button>
           <button onClick={badB}>よくないね。</button>
+          <button onClick={zero}>リセット。</button>
+          <p>現在の数字は{count}です</p>
+
 
           <input type="text" />
           <a href="#">a タグ</a>
