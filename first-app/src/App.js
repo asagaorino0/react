@@ -6,9 +6,11 @@ function App() {
   const hc = () => {
     window.alert('Hello world')
   }
-  const name = 'eriko';
+  const name2 = 'eriko';
 
-  const [count, setCount] = useState(1000);
+  const [count, setCount] = useState(0)
+  const name = "HO"
+  const text = ""
 
   const increment = () => {
     setCount(count + 1);
@@ -27,6 +29,12 @@ function App() {
     console.log(count);
   };
 
+  const add = () => {
+    setCount(count + name);
+    console.log(count);
+  };
+
+
 
 
   return (
@@ -41,29 +49,35 @@ function App() {
           <h1>Hello world</h1>
           <h2>Hello world</h2>
           <h3>Hello world</h3>
-          <h4>Hello world</h4>
+          {/* <h4>Hello world</h4> */}
 
-          <button>button</button>
+
+          {/* <button>button</button>
 
           <button
             onClick={() => window.alert("Hello world2")}
           >button2</button>
 
           <button onClick={increment}>up</button>
-
-          <button onClick={yokiyoki}>いいね。</button>
-          <button onClick={badB}>よくないね。</button>
-          <button onClick={zero}>リセット。</button>
-          <p>現在の数字は{count}です</p>
-
-
           <input type="text" />
           <a href="#">a タグ</a>
-          {name}
+          {name} */}
+
+          <h4>Normal課題</h4>
+          <p>
+            <button onClick={yokiyoki}>いいね。</button>
+            <button onClick={badB}>よくないね。</button>
+            <button onClick={zero}>リセット。</button>
+            {count}
+          </p>
+
+          <h4>Extra課題(く、くるしい、、、、)</h4>
+          <p>
+            <button onClick={add}>add</button>
+            {"H" + count + name}
+          </p>
+
         </div>
-
-
-
 
       </header>
     </div>
