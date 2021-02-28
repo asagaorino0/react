@@ -9,7 +9,7 @@ function App() {
   const name2 = 'eriko';
 
   const [count, setCount] = useState(0)
-  const name = "HO"
+  const name = "ho"
   const text = ""
 
   const increment = () => {
@@ -74,7 +74,7 @@ function App() {
           <h4>Extra課題(く、くるしい、、、、)</h4>
           <p>
             <button onClick={add}>add</button>
-            {"H" + count + name}
+            {count + name}
           </p>
 
         </div>
