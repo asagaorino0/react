@@ -1,85 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import React, { useState } from 'react'
+import Card from './Card';
+
+const sampleArray = [
+  { id: 1, name: 'aaa', date: 19920527 },
+  { id: 2, name: 'bbb', date: 19920528 },
+  { id: 3, name: 'ccc', date: 19920529 },
+  { id: 4, name: 'ddd', date: 19920531 },
+  { id: 5, name: 'eee', date: 19920501 }
+];
 
 function App() {
-  const hc = () => {
-    window.alert('Hello world')
-  }
-  const name2 = 'eriko';
-
-  const [count, setCount] = useState(0)
-  const name = "ho"
-  const text = ""
-
-  const increment = () => {
-    setCount(count + 1);
-    console.log(count);
-  };
-  const yokiyoki = () => {
-    setCount(count + 1);
-    console.log(count);
-  };
-  const badB = () => {
-    setCount(count - 1);
-    console.log(count);
-  };
-  const zero = () => {
-    setCount(0);
-    console.log(count);
-  };
-
-  const add = () => {
-    setCount(count + name);
-    console.log(count);
-  };
-
-
-
-
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+      <Card name="eriko" date="2021/03/07" />
+      {sampleArray.map((data) => {
 
-        <button
-          onClick={hc}> Hello world!</button>
-
-
-        <div>
-          <h1>Hello world</h1>
-          <h2>Hello world</h2>
-          <h3>Hello world</h3>
-          {/* <h4>Hello world</h4> */}
-
-
-          {/* <button>button</button>
-
-          <button
-            onClick={() => window.alert("Hello world2")}
-          >button2</button>
-
-          <button onClick={increment}>up</button>
-          <input type="text" />
-          <a href="#">a タグ</a>
-          {name} */}
-
-          <h4>Normal課題</h4>
-          <p>
-            <button onClick={yokiyoki}>いいね。</button>
-            <button onClick={badB}>よくないね。</button>
-            <button onClick={zero}>リセット。</button>
-            {count}
-          </p>
-
-          <h4>Extra課題(く、くるしい、、、、)</h4>
-          <p>
-            <button onClick={add}>add</button>
-            {count + name}
-          </p>
-
-        </div>
-
-      </header>
+        return <Card key={data.id} name={data.name} date={data.date} />;
+      })}
     </div>
   );
 }
