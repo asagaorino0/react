@@ -12,11 +12,11 @@ const sampleArray = [
 
 function App() {
   return (
-    <div>
+    <div >
       <Card name="eriko" date="2021/03/07" />
       {sampleArray.map((data) => {
 
-        return <Card key={data.id} name={data.name} date={data.date} />;
+        return <Card key={data.id} id={"id:" + data.id} name={"name:" + data.name} date={"date:" + data.date} />;
       })}
     </div>
   );
