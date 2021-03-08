@@ -1,9 +1,18 @@
 h1 {
-    margin: 0;
+    margin: 2px;
 }
 
 .wrapper {
-    width: 300px;
-    height: 500px;
-    border: 1px solid #000;
+    /* width: auto; */
+    height: 50px;
+    border:none;
+}
+
+table {
+    display: flex;
+}
+
+
+h1{
+  width: 95px;
 }
