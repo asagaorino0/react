@@ -43,6 +43,44 @@ h4 {
   margin-bottom: 0px;
 }
 
+table {
+  table-layout: auto;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  /* th:nth-child(1) {
+    background-color: bisque;
+    width: 35px;
+  }
+  
+  th:nth-child(2) {
+    width: 47%;
+  }
+  
+  th:nth-child(3) {
+    background-color: rgb(196, 222, 255);
+    width: 160px;
+  }
+
+  .wrapper td:nth-child(1) {
+    background-color: bisque;
+    width: 20%;
+  }
+  
+  .wrapper td:nth-child(2) {
+    width: 30%;
+  }
+  
+  .wrapper td:nth-child(3) {
+    background-color: rgb(196, 222, 255);
+    width: 50%;
+  } */
 
 
 

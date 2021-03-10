@@ -4,14 +4,15 @@ import './Card.css';
 const Card = (props) => {
     console.log(props)
     return (
-        <div className="wrapper">
-            <table>
-                <td>{props.id}</td>
-                <td>{props.name}</td>
-                <td>{props.date}</td>
-            </table>
+        <tr className="wrapper">
 
-        </div>
+
+            <td>{props.id}</td>
+            <td>{props.name}</td>
+            <td>{props.date}</td>
+
+
+        </tr>
     );
 };
 
