@@ -10,6 +10,7 @@ const Card = (props) => {
             <td>{props.id}</td>
             <td>{props.name}</td>
             <td>{props.date}</td>
+            <td>{props.biko}</td>
 
 
         </tr>

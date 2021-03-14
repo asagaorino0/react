@@ -4,14 +4,16 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ComponentA from './ComponentA';
 import ComponentB from './ComponentB';
 import ComponentC from './ComponentC';
+// import Card from './Card';
 
 
 
 function App() {
 
+  const namae0 = 'ho'
+  // const [namae0, setText] = useState("")
   const [count, setCount] = useState(0)
-  // const [name0, setText] = useState("");
-  const name0 = 'ho'
+
 
 
   const yokiyoki = () => {
@@ -29,11 +31,9 @@ function App() {
     console.log(count);
   };
 
-
-
   // const add = () => {
-  //   setText(name0);
-  //   console.log(name0);
+  //   setText(namae0);
+  //   console.log(namae0);
   // }
 
 
@@ -41,18 +41,18 @@ function App() {
 
 
 
-  // function App() {
+
   return (
     <div >
 
       <p>
         <button onClick={yokiyoki}>いいね。</button>
         <button onClick={bubu}>よくないね。</button>
-        <button onClick={zero}>リセット</button>{count}
+        <button onClick={zero}>リセット</button>{count}{namae0}
       </p>
-      {/* <p>
-        <button onClick={add}>add</button>{name0}
-      </p> */}
+      <p>
+        {/* <button onClick={add}>add</button>{namae0} */}
+      </p>
       <Router>
         <Switch>
           <Route exact path="/" component={ComponentA} />
