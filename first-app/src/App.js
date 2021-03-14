@@ -10,8 +10,8 @@ import ComponentC from './ComponentC';
 
 function App() {
 
-  const namae0 = 'ho'
-  // const [namae0, setText] = useState("")
+  // const na0 = 'ho'
+  const [na0, setText] = useState("ho")
   const [count, setCount] = useState(0)
 
 
@@ -31,10 +31,10 @@ function App() {
     console.log(count);
   };
 
-  // const add = () => {
-  //   setText(namae0);
-  //   console.log(namae0);
-  // }
+  const add = () => {
+    setText(na0 + na0);
+    console.log(na0);
+  }
 
 
 
@@ -48,10 +48,10 @@ function App() {
       <p>
         <button onClick={yokiyoki}>いいね。</button>
         <button onClick={bubu}>よくないね。</button>
-        <button onClick={zero}>リセット</button>{count}{namae0}
+        <button onClick={zero}>リセット</button>{count}
       </p>
       <p>
-        {/* <button onClick={add}>add</button>{namae0} */}
+        <button onClick={add}>add</button>{na0}
       </p>
       <Router>
         <Switch>

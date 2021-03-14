@@ -8,7 +8,7 @@ import Card from './Card';
 
 
 const sampleArray = [
-    { id: 1, name: 'aaa', date: 19920527, biko: '-' },
+    { id: 1, name: 'aaa', date: 19920527, biko: '-', },
     { id: 2, name: 'bbb', date: 19920528, biko: '-' },
     { id: 3, name: 'ccc', date: 19920529, biko: '-' },
     { id: 4, name: 'ddd', date: 19920531, biko: '-' },
@@ -79,7 +79,7 @@ const ComponentA = () => {
                 <tbody>
 
                     {sampleArray.map((data) => {
-                        return <Card key={data.id} id={data.id} name={data.name} date={data.date} />;
+                        return <Card key={data.id} id={data.id} name={data.name} date={data.date} A={data.biko} />;
                     })}
 
 
