@@ -1,39 +1,67 @@
-import React from 'react';
+import React, { useState } from 'react'
 import './App.css';
-import Card from './Card';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ComponentA from './ComponentA';
+import ComponentB from './ComponentB';
+import ComponentC from './ComponentC';
 
-const sampleArray = [
-  { id: '(id)', name: '(name)', date: '(date)' },
-  { id: 1, name: 'aaa', date: 19920527 },
-  { id: 2, name: 'bbb', date: 19920528 },
-  { id: 3, name: 'ccc', date: 19920529 },
-  { id: 4, name: 'ddd', date: 19920531 },
-  { id: 5, name: 'eee', date: 19920501 }
-];
+
 
 function App() {
+
+  const [count, setCount] = useState(0)
+  // const [name0, setText] = useState("");
+  const name0 = 'ho'
+
+
+  const yokiyoki = () => {
+    setCount(count + 1);
+    console.log(count);
+  };
+
+  const bubu = () => {
+    setCount(count - 1);
+    console.log(count);
+  };
+
+  const zero = () => {
+    setCount(0);
+    console.log(count);
+  };
+
+
+
+  // const add = () => {
+  //   setText(name0);
+  //   console.log(name0);
+  // }
+
+
+
+
+
+
+  // function App() {
   return (
     <div >
-      <table>
 
+      <p>
+        <button onClick={yokiyoki}>いいね。</button>
+        <button onClick={bubu}>よくないね。</button>
+        <button onClick={zero}>リセット</button>{count}
+      </p>
+      {/* <p>
+        <button onClick={add}>add</button>{name0}
+      </p> */}
+      <Router>
+        <Switch>
+          <Route exact path="/" component={ComponentA} />
+          <Route exact path="/componentb" component={ComponentB} />
+          <Route exact path="/componentc" component={ComponentC} />
 
-        <thead>
+        </Switch>
+      </Router>
 
-          <tr>
-            <th>id</th>
-            <th>name</th>
-            <th>date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* <tr> */}
-          {sampleArray.map((data) => {
-
-            return <Card key={data.id} id={data.id} name={data.name} date={data.date} />;
-          })}
-          {/* </tr> */}
-        </tbody>
-      </table>
 
     </div>
   );
