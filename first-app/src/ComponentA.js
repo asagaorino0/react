@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Table } from 'react-bootstrap';
-// import { Card } from 'react-bootstrap';
-import Card from './Card';
+import { Card } from 'react-bootstrap';
+import Cardtable from './Card';
+import './ComponentA.css';
 // ↑これを復活させて上の｛card｝を消すとtableができるが、２つは無理なのか？
 
 
@@ -69,17 +70,17 @@ const ComponentA = () => {
 
             <Table striped bordered hover size="sm">
                 <thead>
-                    {/* <tr> */}
-                    <th>id</th>
-                    <th>name</th>
-                    <th>date</th>
-                    <th>#</th>
-                    {/* </tr> */}
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>date</th>
+                        <th>#</th>
+                    </tr>
                 </thead>
                 <tbody>
 
                     {sampleArray.map((data) => {
-                        return <Card key={data.id} id={data.id} name={data.name} date={data.date} A={data.biko} />;
+                        return <Cardtable key={data.id} id={data.id} name={data.name} date={data.date} A={data.biko} />;
                     })}
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css';
 
-const Card = (props) => {
+const Cardtable = (props) => {
     console.log(props)
     return (
         <tr className="wrapper">
@@ -16,4 +16,4 @@ const Card = (props) => {
     );
 };
 
-export default Card;
+export default Cardtable;
