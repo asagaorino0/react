@@ -5,8 +5,6 @@ import { Table } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 import Cardtable from './Card';
 import './ComponentA.css';
-// ↑これを復活させて上の｛card｝を消すとtableができるが、２つは無理なのか？
-
 
 const sampleArray = [
     { id: 1, name: 'aaa', date: 19920527, biko: '-', },
@@ -41,12 +39,6 @@ const sampleArray = [
     { id: 30, name: 'ちょっと長めのやつをnameをとして登録しておきます。', date: 19920501, biko: '-' },
 ];
 
-// function app() {
-
-
-
-
-
 const ComponentA = () => {
     return (
         <>
@@ -54,7 +46,6 @@ const ComponentA = () => {
             <Link to="/"><ul><li><h4>Home</h4></li></ul></Link>
             <Link to="componentb"><ul><li><h4>ComponentB</h4></li></ul></Link>
             <Link to="componentc"><ul><li><h4>ComponentC</h4></li></ul></Link>
-
             <Card style={{ width: '18rem' }}>
                 <Card.Body>
                     <Card.Title>Card Title</Card.Title>
@@ -78,19 +69,13 @@ const ComponentA = () => {
                     </tr>
                 </thead>
                 <tbody>
-
                     {sampleArray.map((data) => {
                         return <Cardtable key={data.id} id={data.id} name={data.name} date={data.date} A={data.biko} />;
                     })}
-
-
-
                 </tbody>
             </Table>
-
         </>
-
     )
 }
-// }
+
 export default ComponentA;

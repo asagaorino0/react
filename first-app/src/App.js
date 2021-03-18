@@ -4,17 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ComponentA from './ComponentA';
 import ComponentB from './ComponentB';
 import ComponentC from './ComponentC';
-// import Card from './Card';
-
-
 
 function App() {
 
-  // const na0 = 'ho'
   const [na0, setText] = useState("ho")
   const [count, setCount] = useState(0)
-
-
 
   const yokiyoki = () => {
     setCount(count + 1);
@@ -36,15 +30,8 @@ function App() {
     console.log(na0);
   }
 
-
-
-
-
-
-
   return (
     <div >
-
       <p>
         <button onClick={yokiyoki}>いいね。</button>
         <button onClick={bubu}>よくないね。</button>
@@ -58,10 +45,8 @@ function App() {
           <Route exact path="/" component={ComponentA} />
           <Route exact path="/componentb" component={ComponentB} />
           <Route exact path="/componentc" component={ComponentC} />
-
         </Switch>
       </Router>
-
 
     </div>
   );
