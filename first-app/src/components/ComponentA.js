@@ -31,7 +31,7 @@ const ComponentA = () => {
                         <th>userId</th>
                         <th>id</th>
                         <th>title</th>
-                        <th>Username</th>
+                        <th>body</th>
                     </tr>
                 </thead>
                 <tbody>
