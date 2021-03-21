@@ -18,7 +18,7 @@ const ComponentA = () => {
                 setData(res.data)
                 console.log(res.data, 'res check')
             })
-    }, false);
+    }, []);
 
     const increment = () => {
         setCount(count + 1);
