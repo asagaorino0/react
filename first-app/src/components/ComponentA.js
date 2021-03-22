@@ -8,9 +8,9 @@ import Button from 'react-bootstrap/Button'
 const ComponentA = () => {
     const [count, setCount] = useState(0);
     const [data, setData] = useState([]);
-    const [display, setDisplay] = useState(false)
 
     useEffect(() => {
+        if (count === 0) return;
         console.log('useEfefectが呼び出されました。');
 
         axios.get('https://jsonplaceholder.typicode.com/posts')
@@ -18,19 +18,17 @@ const ComponentA = () => {
                 setData(res.data)
                 console.log(res.data, 'res check')
             })
-    }, []);
+    }, [count]);
 
     const increment = () => {
         setCount(count + 1);
     };
 
 
-
     return (
         <>
             <div>ComponentA</div>
-
-            <Button onClick={() => setDisplay(!display)}>Get!</Button>{' '}
+            <Button onClick={increment}>+Get!</Button>{' '}
             <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -40,27 +38,23 @@ const ComponentA = () => {
                         <th>body</th>
                     </tr>
                 </thead>
-                {display &&
-                    <tbody>
-                        {
-                            data.map(element => {
-                                return (
-                                    <tr>
-                                        <td>{element.userId}</td>
-                                        <td>{element.id}</td>
-                                        <td>{element.title}</td>
-                                        <td>{element.body}</td>
-                                    </tr>
-                                );
-                            })
-                        }
-                    </tbody>}
-
+                <tbody>
+                    {
+                        data.map(element => {
+                            return (
+                                <tr>
+                                    <td>{element.userId}</td>
+                                    <td>{element.id}</td>
+                                    <td>{element.title}</td>
+                                    <td>{element.body}</td>
+                                </tr>
+                            );
+                        })
+                    }
+                </tbody>
             </Table>
 
             <Link to="componentb">ComponentBへ移動</Link>
-            <button onClick={increment}>+</button>
-            <div>count : {count}</div>
         </>
     )
 }
