@@ -6,29 +6,20 @@ import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 
 const ComponentA = () => {
-    const [count, setCount] = useState(0);
     const [data, setData] = useState([]);
 
-    useEffect(() => {
-        if (count === 0) return;
-        console.log('useEfefectが呼び出されました。');
-
+    const Click = () => {
         axios.get('https://jsonplaceholder.typicode.com/posts')
             .then(res => {
                 setData(res.data)
                 console.log(res.data, 'res check')
             })
-    }, [count]);
-
-    const increment = () => {
-        setCount(count + 1);
-    };
-
+    }
 
     return (
         <>
             <div>ComponentA</div>
-            <Button onClick={increment}>+Get!</Button>{' '}
+            <Button onClick={Click}>Get!</Button>{' '}
             <Table striped bordered hover>
                 <thead>
                     <tr>
