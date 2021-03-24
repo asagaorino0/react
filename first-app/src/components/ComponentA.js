@@ -34,7 +34,7 @@ const ComponentA = () => {
                         data.map(element => {
                             if (element.id % 2 !== 0) {
                                 return (
-                                    <tr>
+                                    <tr key={element.id} >
                                         <td>{element.userId}</td>
                                         <td>{element.id}</td>
                                         <td>{element.title}</td>
