@@ -32,14 +32,16 @@ const ComponentA = () => {
                 <tbody>
                     {
                         data.map(element => {
-                            return (
-                                <tr>
-                                    <td>{element.userId}</td>
-                                    <td>{element.id}</td>
-                                    <td>{element.title}</td>
-                                    <td>{element.body}</td>
-                                </tr>
-                            );
+                            if (element.id % 2 !== 0) {
+                                return (
+                                    <tr>
+                                        <td>{element.userId}</td>
+                                        <td>{element.id}</td>
+                                        <td>{element.title}</td>
+                                        <td>{element.body}</td>
+                                    </tr>
+                                );
+                            }
                         })
                     }
                 </tbody>
