@@ -5,11 +5,8 @@ const ComponentC = () => {
 
     return (
         <>
-
             <div>ComponentC</div>
             <Link to="/">ComponentAへ移動</Link>
-
-
         </>
     )
 }

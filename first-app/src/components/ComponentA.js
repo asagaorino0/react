@@ -8,18 +8,25 @@ import Button from 'react-bootstrap/Button'
 const ComponentA = () => {
     const [data, setData] = useState([]);
 
+
     const Click = () => {
         axios.get('https://jsonplaceholder.typicode.com/posts')
             .then(res => {
                 setData(res.data)
-                console.log(res.data, 'res check')
             })
     }
+
+    const newdata = data.filter(function (userId, id, title, body) {
+        return id % 2 == 0;
+    })
+    console.log(newdata);
+
 
     return (
         <>
             <div>ComponentA</div>
             <Button onClick={Click}>Get!</Button>{' '}
+
             <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -31,17 +38,15 @@ const ComponentA = () => {
                 </thead>
                 <tbody>
                     {
-                        data.map(element => {
-                            if (element.id % 2 !== 0) {
-                                return (
-                                    <tr key={element.id} >
-                                        <td>{element.userId}</td>
-                                        <td>{element.id}</td>
-                                        <td>{element.title}</td>
-                                        <td>{element.body}</td>
-                                    </tr>
-                                );
-                            }
+                        newdata.map(element => {
+                            return (
+                                <tr key={element.id}>
+                                    <td>{element.userId}</td>
+                                    <td>{element.id}</td>
+                                    <td>{element.title}</td>
+                                    <td>{element.body}</td>
+                                </tr>
+                            );
                         })
                     }
                 </tbody>
@@ -51,5 +56,6 @@ const ComponentA = () => {
         </>
     )
 }
+
 
 export default ComponentA;
