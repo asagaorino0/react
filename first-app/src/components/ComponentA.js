@@ -8,7 +8,6 @@ import Button from 'react-bootstrap/Button'
 const ComponentA = () => {
     const [data, setData] = useState([]);
 
-
     const Click = () => {
         axios.get('https://jsonplaceholder.typicode.com/posts')
             .then(res => {
@@ -26,7 +25,6 @@ const ComponentA = () => {
         <>
             <div>ComponentA</div>
             <Button onClick={Click}>Get!</Button>{' '}
-
             <Table striped bordered hover>
                 <thead>
                     <tr>
