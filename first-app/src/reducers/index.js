@@ -16,15 +16,14 @@ const reducer = (state = [], action) => {
             };
             const id = state.length + 1;
             return [...state, { id, ...event }];
-        default:
-            return state;
 
         case ALL_RESET:
             return [...state.length = ""];
 
         case CYOI_RESET:
 
-
+        default:
+            return state;
     }
 }
 export default reducer;
