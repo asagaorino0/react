@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT, RESET, ADD_EVENT } from '../actions/index'
+import { INCREMENT, DECREMENT, RESET, ADD_EVENT, ALL_RESET, CYOI_RESET } from '../actions/index'
 
 
 const reducer = (state = [], action) => {
@@ -18,6 +18,13 @@ const reducer = (state = [], action) => {
             return [...state, { id, ...event }];
         default:
             return state;
+
+        case ALL_RESET:
+            return [...state.length = ""];
+
+        case CYOI_RESET:
+
+
     }
-};
+}
 export default reducer;

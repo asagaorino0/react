@@ -2,8 +2,8 @@ import axios from 'axios';
 import React, { useState, useReducer } from 'react'
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Form, Table } from 'react-bootstrap'
-import { ADD_EVENT } from '../actions';
+import { Button, Form, Row, Table } from 'react-bootstrap'
+import { ADD_EVENT, ALL_RESET, CYOI_RESET } from '../actions';
 import reducer from '../reducers/index';
 
 const ComponentB = () => {
@@ -12,6 +12,8 @@ const ComponentB = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [comment, setComment] = useState('');
+    const [id, setData] = useState('');
+
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -26,9 +28,22 @@ const ComponentB = () => {
         setComment('');
     };
 
-    const zenkeshi = () => {
-        window.location.reload();
+    const zenkeshi = (r) => {
+        r.preventDefault();
+        dispatch({
+            type: ALL_RESET,
+        });
     };
+
+    const cyoikeshi = (e) => {
+        e.preventDefault();
+        dispatch({
+            type: CYOI_RESET,
+
+        })
+
+    }
+
 
     return (
         <>
@@ -88,7 +103,9 @@ const ComponentB = () => {
                                 <td>{data.body}</td>
                                 <td>{data.comment}</td>
                                 <td>
-                                    <Button variant="danger">削除</Button>
+                                    <Button variant="danger" onClick={cyoikeshi}>
+                                        削除
+                                    </Button>
                                 </td>
                             </tr>
                         );
