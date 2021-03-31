@@ -79,34 +79,36 @@ const ComponentB = () => {
             </Form>
 
             <h1>Table</h1>
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>title</th>
-                        <th>body</th>
-                        <th>comment</th>
-                        <th>#</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {state.map((data, index) => {
-                        return (
-                            <tr key={index}>
-                                <td>{data.id}</td>
-                                <td>{data.title}</td>
-                                <td>{data.body}</td>
-                                <td>{data.comment}</td>
-                                <td>
-                                    <Button variant="danger" onClick={cyoikeshi}>
-                                        削除
+            <div class='float-left'>
+                <Table striped bordered hover align="left">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>title</th>
+                            <th>body</th>
+                            <th>comment</th>
+                            <th>#</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {state.map((data, index) => {
+                            return (
+                                <tr key={index}>
+                                    <td>{data.id}</td>
+                                    <td>{data.title}</td>
+                                    <td>{data.body}</td>
+                                    <td>{data.comment}</td>
+                                    <td>
+                                        <Button variant="danger" onClick={cyoikeshi}>
+                                            削除
                                     </Button>
-                                </td>
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </Table>
+                                    </td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </Table>
+            </div>
 
         </>
     )
