@@ -21,6 +21,13 @@ const reducer = (state = [], action) => {
             return [...state.length = ""];
 
         case CYOI_RESET:
+            console.log(state, "クリック前");
+            console.log(action.id, "クリックしたid");
+            const newdata = state.filter(state => {
+                return state.id !== action.id;
+            });
+            console.log(newdata);
+            return newdata;
 
         default:
             return state;

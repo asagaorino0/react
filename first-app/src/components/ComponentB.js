@@ -32,14 +32,6 @@ const ComponentB = () => {
         });
     };
 
-    const cyoikeshi = (e) => {
-        e.preventDefault();
-        dispatch({
-            type: CYOI_RESET,
-        })
-    }
-
-
     return (
         <>
             <div>ComponentB</div>
@@ -92,6 +84,16 @@ const ComponentB = () => {
                     </thead>
                     <tbody>
                         {state.map((data, index) => {
+                            //　↓フィルタして消すためのidを取得
+                            const cyoikeshi = (e) => {
+                                e.preventDefault();
+                                dispatch({
+                                    type: CYOI_RESET,
+                                    id: data.id,
+                                });
+                            };
+                            //　↑フィルタして消すためのidを取得
+
                             return (
                                 <tr key={index}>
                                     <td>{data.id}</td>
