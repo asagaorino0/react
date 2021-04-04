@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT, RESET, ADD_EVENT, ALL_RESET, CYOI_RESET } from '../actions/index'
+import { INCREMENT, DECREMENT, RESET, ADD_EVENT, ALL_RESET, CYOI_RESET, KORE_KORE, KORE_RESET } from '../actions/index'
 
 
 const reducer = (state = [], action) => {
@@ -12,13 +12,13 @@ const reducer = (state = [], action) => {
 
         case ADD_EVENT:
             const event = {
-                title: action.title, body: action.body, comment: action.comment
+                check: action.check, title: action.title, body: action.body, comment: action.comment
             };
             const id = state.length + 1;
             return [...state, { id, ...event }];
 
         case ALL_RESET:
-            return [...state.length = ""];
+            return [];//← return [...state.length = ""];
 
         case CYOI_RESET:
             console.log(state, "クリック前");
@@ -29,8 +29,18 @@ const reducer = (state = [], action) => {
             console.log(newdata);
             return newdata;
 
+        case KORE_RESET:
+            console.log(state, "クリック前");
+
+            const newkore = state.filter(state => {
+                return state.id !== state.checked;//?????????
+            });
+            console.log(newkore, "newkore");
+            return newkore;
+
         default:
             return state;
+
     }
 }
 export default reducer;

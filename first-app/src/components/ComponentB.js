@@ -2,7 +2,7 @@ import React, { useState, useReducer } from 'react'
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form, Table } from 'react-bootstrap'
-import { ADD_EVENT, ALL_RESET, CYOI_RESET } from '../actions';
+import { ADD_EVENT, ALL_RESET, CYOI_RESET, KORE_RESET } from '../actions';
 import reducer from '../reducers/index';
 
 const ComponentB = () => {
@@ -11,6 +11,7 @@ const ComponentB = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [comment, setComment] = useState('');
+    const [checkedItems, setCheckedItems] = useState({})
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -18,7 +19,7 @@ const ComponentB = () => {
             type: ADD_EVENT,
             title,
             body,
-            comment
+            comment,
         });
         setTitle('');
         setBody('');
@@ -31,6 +32,28 @@ const ComponentB = () => {
             type: ALL_RESET,
         });
     };
+
+    const korekeshi = (k) => {
+        k.preventDefault();
+        dispatch({
+            type: KORE_RESET,
+        });
+    };
+
+    const handleChange = (e) => {
+        setCheckedItems({
+            ...checkedItems,
+            [e.target.id]: e.target.checked,
+        })
+        console.log('checkedItems:', checkedItems)
+    }
+
+    const erandayatura = Object.entries(checkedItems).reduce((pre, [id, value]) => {
+        pre.push(id);
+        return pre
+    }, []);
+    console.log('erandayatura', erandayatura);
+
 
     return (
         <>
@@ -67,6 +90,9 @@ const ComponentB = () => {
                 <Button variant="danger" onClick={zenkeshi}>
                     イベント全削除
                  </Button>
+                <Button variant="info" onClick={korekeshi}>
+                    イベント複数削除
+                 </Button>
 
             </Form>
 
@@ -75,10 +101,12 @@ const ComponentB = () => {
                 <Table striped bordered hover align="left">
                     <thead>
                         <tr>
+                            <th>check</th>
                             <th>id</th>
                             <th>title</th>
                             <th>body</th>
                             <th>comment</th>
+                            <th>val</th>
                             <th>#</th>
                         </tr>
                     </thead>
@@ -96,10 +124,19 @@ const ComponentB = () => {
 
                             return (
                                 <tr key={index}>
+                                    <td>
+                                        <input type="checkbox"
+                                            id={data.id}
+                                            onChange={handleChange}
+                                        // onCheck={Val = 1}
+                                        />
+
+                                    </td>
                                     <td>{data.id}</td>
                                     <td>{data.title}</td>
                                     <td>{data.body}</td>
                                     <td>{data.comment}</td>
+                                    <td>{data.val}</td>
                                     <td>
                                         <Button variant="danger" onClick={cyoikeshi}>
                                             削除
