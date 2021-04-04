@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form, Table } from 'react-bootstrap'
 import { ADD_EVENT, ALL_RESET, CYOI_RESET, KORE_RESET } from '../actions';
 import reducer from '../reducers/index';
+import ComponentF from './ComponentF';
 
 const ComponentB = () => {
 
@@ -56,10 +57,11 @@ const ComponentB = () => {
 
 
     return (
+
         <>
             <div>ComponentB</div>
             <Link to="componentc">ComponentCへ移動</Link>
-
+            <ComponentF />
             <Form>
                 <Form.Group controlId="formBasicPassword">
                     <Form.Label>Title</Form.Label>

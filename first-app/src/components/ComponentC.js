@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react'
 import { Link } from 'react-router-dom';
 import reducer from '../reducers/index';
+import ComponentD from './ComponentD';
 
 
 const initialCount = {
@@ -39,6 +40,7 @@ const ComponentC = () => {
             <button onClick={decrment}>-</button>
             <button onClick={reset}>reset</button>
             <h1>{state.count}</h1>
+            <ComponentD />
         </>
     );
 };
