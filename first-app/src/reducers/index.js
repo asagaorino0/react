@@ -24,12 +24,9 @@ const reducer = (state = [], action) => {
                 return { count: state.count + 11 };
             }
             else {
-                if (ahoninaru > 13) {
-                    return { count: state.count - 9 };
-                }
-                else {
-                    return { count: state.count + 1 };
-                }
+
+                return { count: state.count + 1 };
+
             };
 
         case CYOI_RESET:
