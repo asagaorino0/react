@@ -34,34 +34,34 @@ const ComponentB = () => {
         });
     };
 
-    // const korekeshi = (k) => {
-    //     k.preventDefault();
-    //     dispatch({
-    //         type: KORE_RESET,
-    //     });
-    // };
+    const korekeshi = (k) => {
+        k.preventDefault();
+        dispatch({
+            type: KORE_RESET,
+        });
+    };
 
-    // const handleChange = (e) => {
-    //     setCheckedItems({
-    //         ...checkedItems,
-    //         [e.target.id]: e.target.checked,
-    //     })
-    //     console.log('checkedItems:', checkedItems)
-    // }
+    const handleChange = (e) => {
+        setCheckedItems({
+            ...checkedItems,
+            [e.target.id]: e.target.checked,
+        })
+        console.log('checkedItems:', checkedItems)
+    }
 
-    // const erandayatura = Object.entries(checkedItems).reduce((pre, [id, value]) => {
-    //     pre.push(id);
-    //     return pre
-    // }, []);
-    // console.log('erandayatura', erandayatura);
+    const erandayatura = Object.entries(checkedItems).reduce((pre, [id, value]) => {
+        pre.push(id);
+        return pre
+    }, []);
+    console.log('erandayatura', erandayatura);
 
 
     return (
-
         <>
             <div>ComponentB</div>
             <Link to="componentc">ComponentCへ移動</Link>
             <ComponentF />
+            {/* ↑これだな。 */}
             <Form>
                 <Form.Group controlId="formBasicPassword">
                     <Form.Label>Title</Form.Label>
@@ -92,10 +92,9 @@ const ComponentB = () => {
                 <Button variant="danger" onClick={zenkeshi}>
                     イベント全削除
                  </Button>
-                {/* <Button variant="info" onClick={korekeshi}>
+                <Button variant="info" onClick={korekeshi}>
                     イベント複数削除
-                 </Button> */}
-
+                 </Button>
             </Form>
 
             <h1>Table</h1>

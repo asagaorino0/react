@@ -8,11 +8,12 @@ import StoreProvider from './store/index';
 ReactDOM.render(
   <React.StrictMode>
     <StoreProvider>
-      <App />
+      <App />,
     </StoreProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
