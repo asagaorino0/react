@@ -7,10 +7,6 @@ const ComponentF = () => {
     return (
         <div>.<h1>ComponentF.js</h1>
             <h2>{value}</h2>
-
-
-
-
         </div>
     )
 }

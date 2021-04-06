@@ -34,26 +34,26 @@ const ComponentB = () => {
         });
     };
 
-    const korekeshi = (k) => {
-        k.preventDefault();
-        dispatch({
-            type: KORE_RESET,
-        });
-    };
+    // const korekeshi = (k) => {
+    //     k.preventDefault();
+    //     dispatch({
+    //         type: KORE_RESET,
+    //     });
+    // };
 
-    const handleChange = (e) => {
-        setCheckedItems({
-            ...checkedItems,
-            [e.target.id]: e.target.checked,
-        })
-        console.log('checkedItems:', checkedItems)
-    }
+    // const handleChange = (e) => {
+    //     setCheckedItems({
+    //         ...checkedItems,
+    //         [e.target.id]: e.target.checked,
+    //     })
+    //     console.log('checkedItems:', checkedItems)
+    // }
 
-    const erandayatura = Object.entries(checkedItems).reduce((pre, [id, value]) => {
-        pre.push(id);
-        return pre
-    }, []);
-    console.log('erandayatura', erandayatura);
+    // const erandayatura = Object.entries(checkedItems).reduce((pre, [id, value]) => {
+    //     pre.push(id);
+    //     return pre
+    // }, []);
+    // console.log('erandayatura', erandayatura);
 
 
     return (
@@ -92,9 +92,9 @@ const ComponentB = () => {
                 <Button variant="danger" onClick={zenkeshi}>
                     イベント全削除
                  </Button>
-                <Button variant="info" onClick={korekeshi}>
+                {/* <Button variant="info" onClick={korekeshi}>
                     イベント複数削除
-                 </Button>
+                 </Button> */}
 
             </Form>
 
@@ -127,11 +127,10 @@ const ComponentB = () => {
                             return (
                                 <tr key={index}>
                                     <td>
-                                        <input type="checkbox"
+                                        {/* <input type="checkbox"
                                             id={data.id}
                                             onChange={handleChange}
-                                        // onCheck={Val = 1}
-                                        />
+                                        /> */}
 
                                     </td>
                                     <td>{data.id}</td>

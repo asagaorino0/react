@@ -32,6 +32,8 @@ const ComponentC = () => {
         });
     };
 
+
+
     return (
         <>
             <div>ComponentC</div>

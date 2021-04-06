@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import StoreProvider0 from './store/index';
 import StoreProvider from './store/index';
 
 ReactDOM.render(
