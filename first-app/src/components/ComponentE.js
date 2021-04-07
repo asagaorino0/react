@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import { Store } from '../store/index';
-import { INCREMENT, DECREMENT, RESET, AHO, CLICK } from '../actions/index';
-import ComponentA from './ComponentA';
+import { INCREMENT, DECREMENT, RESET, AHO } from '../actions/index';
+import Button from 'react-bootstrap/Button'
 
 const ComponentE = () => {
-    const value = useContext(Store);
     const { globalState, setGlobalState } = useContext(Store);
     const handleClick = () => {
         setGlobalState({
@@ -26,8 +25,10 @@ const ComponentE = () => {
             type: AHO
         });
     };
+    const get = () => {
+        console.log(globalState, 'in componentE');
+    }
 
-    console.log(globalState);
     return (
         <div>
             <h1>ComponentE.js</h1>
@@ -36,8 +37,7 @@ const ComponentE = () => {
             <button onClick={reset}>reset</button>
             <button onClick={aho}>３の倍数で</button>
             <h1>ComponentA.js</h1>
-            <ComponentA />
-
+            <Button onClick={get}>Get!</Button>{' '}
         </div >
     );
 };

@@ -26,21 +26,18 @@ const ComponentB = () => {
         setBody('');
         setComment('');
     };
-
     const zenkeshi = (r) => {
         r.preventDefault();
         dispatch({
             type: ALL_RESET,
         });
     };
-
     const korekeshi = (k) => {
         k.preventDefault();
         dispatch({
             type: KORE_RESET,
         });
     };
-
     const handleChange = (e) => {
         setCheckedItems({
             ...checkedItems,
@@ -48,14 +45,11 @@ const ComponentB = () => {
         })
         console.log('checkedItems:', checkedItems)
     }
-
     const erandayatura = Object.entries(checkedItems).reduce((pre, [id, value]) => {
         pre.push(id);
         return pre
     }, []);
-    console.log('erandayatura', erandayatura);
-
-
+    // console.log('erandayatura', erandayatura);
     return (
         <>
             <div>ComponentB</div>
@@ -148,7 +142,6 @@ const ComponentB = () => {
                     </tbody>
                 </Table>
             </div>
-
         </>
     )
 }

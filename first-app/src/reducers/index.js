@@ -1,4 +1,5 @@
-import { INCREMENT, DECREMENT, RESET, ADD_EVENT, ALL_RESET, CYOI_RESET, KORE_RESET, AHO } from '../actions/index'
+import { INCREMENT, DECREMENT, RESET, ADD_EVENT, ALL_RESET, CYOI_RESET, KORE_RESET, AHO, GET } from '../actions/index'
+import { useState } from 'react'
 
 const reducer = (state = [], action) => {
     switch (action.type) {
@@ -24,7 +25,10 @@ const reducer = (state = [], action) => {
             else {
                 return { count: state.count + 1 };
             };
-
+        case GET:
+            const get = { data: action.data };
+            return get
+        // console.log(get, "reducer");
         case CYOI_RESET:
             console.log(state, "クリック前");
             console.log(action.id, "クリックしたid");
@@ -33,7 +37,6 @@ const reducer = (state = [], action) => {
             });
             console.log(newdata);
             return newdata;
-
         case KORE_RESET:
             console.log(state, "クリック前");
             const newkore = state.filter(state => {
@@ -41,10 +44,8 @@ const reducer = (state = [], action) => {
             });
             console.log(newkore, "newkore");
             return newkore;
-
         default:
             return state;
-
     }
 }
 export default reducer;
