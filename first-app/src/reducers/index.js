@@ -1,6 +1,4 @@
-import { INCREMENT, DECREMENT, RESET, ADD_EVENT, ALL_RESET, CYOI_RESET, KORE_RESET, AHO, CLICK } from '../actions/index'
-import axios from 'axios';
-import { useEffect } from 'react'
+import { INCREMENT, DECREMENT, RESET, ADD_EVENT, ALL_RESET, CYOI_RESET, KORE_RESET, AHO } from '../actions/index'
 
 const reducer = (state = [], action) => {
     switch (action.type) {
@@ -24,9 +22,7 @@ const reducer = (state = [], action) => {
                 return { count: state.count + 11 };
             }
             else {
-
                 return { count: state.count + 1 };
-
             };
 
         case CYOI_RESET:
@@ -38,13 +34,13 @@ const reducer = (state = [], action) => {
             console.log(newdata);
             return newdata;
 
-        // case KORE_RESET:
-        //     console.log(state, "クリック前");
-        //     const newkore = state.filter(state => {
-        //         return state.id !== state.checked;//?????????
-        //     });
-        //     console.log(newkore, "newkore");
-        //     return newkore;
+        case KORE_RESET:
+            console.log(state, "クリック前");
+            const newkore = state.filter(state => {
+                return state.id !== state.checked;//?????????
+            });
+            console.log(newkore, "newkore");
+            return newkore;
 
         default:
             return state;

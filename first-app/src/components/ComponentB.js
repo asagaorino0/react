@@ -126,10 +126,10 @@ const ComponentB = () => {
                             return (
                                 <tr key={index}>
                                     <td>
-                                        {/* <input type="checkbox"
+                                        <input type="checkbox"
                                             id={data.id}
                                             onChange={handleChange}
-                                        /> */}
+                                        />
 
                                     </td>
                                     <td>{data.id}</td>

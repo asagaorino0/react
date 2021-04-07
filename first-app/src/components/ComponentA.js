@@ -12,7 +12,7 @@ const ComponentA = () => {
         axios.get('https://jsonplaceholder.typicode.com/posts')
             .then(res => {
                 setData(res.data)
-                console.log(res.data, 'res check')
+                // console.log(res.data, 'res check')
             })
     }
 

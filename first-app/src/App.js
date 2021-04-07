@@ -7,8 +7,6 @@ import ComponentC from './components/ComponentC';
 
 function App() {
 
-
-
   return (
     <div >
 
