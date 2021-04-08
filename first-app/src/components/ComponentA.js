@@ -28,34 +28,41 @@ const ComponentA = () => {
     return (
         <>
             <div>ComponentA</div>
-            <Link to="componentb">ComponentBへ移動</Link>
-            <Link to="componentc">ComponentCへ移動</Link>
-
-            <Button onClick={click}>Get!!!</Button>{' '}
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>userId</th>
-                        <th>id</th>
-                        <th>title</th>
-                        <th>body</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        newdata.map(element => {
-                            return (
-                                <tr key={element.id}>
-                                    <td>{element.userId}</td>
-                                    <td>{element.id}</td>
-                                    <td>{element.title}</td>
-                                    <td>{element.body}</td>
-                                </tr>
-                            );
-                        })
-                    }
-                </tbody>
-            </Table>
+            <div>
+                <Link to="componentb">ComponentBへ移動</Link>
+            </div>
+            <div>
+                <Link to="componentc">ComponentCへ移動</Link>
+            </div>
+            <div>
+                <Button onClick={click}>Get!!!</Button>{' '}
+            </div>
+            <div>
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>userId</th>
+                            <th>id</th>
+                            <th>title</th>
+                            <th>body</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            newdata.map(element => {
+                                return (
+                                    <tr key={element.id}>
+                                        <td>{element.userId}</td>
+                                        <td>{element.id}</td>
+                                        <td>{element.title}</td>
+                                        <td>{element.body}</td>
+                                    </tr>
+                                );
+                            })
+                        }
+                    </tbody>
+                </Table>
+            </div>
         </>
     )
 }
