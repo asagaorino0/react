@@ -38,7 +38,7 @@ const reducer = (state = [], action) => {
         case KORE_RESET:
             console.log(state, "クリック前");
             const newkore = state.filter(state => {
-                return state.id == 2//?????????
+                return state.id !== state.erandayatura//?????????
             });
             return newkore;
         default:
