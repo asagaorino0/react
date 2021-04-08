@@ -7,7 +7,6 @@ import reducer from '../reducers/index';
 import ComponentF from './ComponentF';
 
 const ComponentB = () => {
-
     const [state, dispatch] = useReducer(reducer, []);
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
@@ -49,7 +48,8 @@ const ComponentB = () => {
         pre.push(id);
         return pre
     }, []);
-    // console.log('erandayatura', erandayatura);
+    console.log('erandayatura', erandayatura);
+
     return (
         <>
             <div>ComponentB</div>
@@ -92,7 +92,7 @@ const ComponentB = () => {
             </Form>
 
             <h1>Table</h1>
-            <div class='float-left'>
+            <div >
                 <Table striped bordered hover align="left">
                     <thead>
                         <tr>
@@ -105,6 +105,7 @@ const ComponentB = () => {
                             <th>#</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         {state.map((data, index) => {
                             //　↓フィルタして消すためのidを取得

@@ -28,9 +28,7 @@ const reducer = (state = [], action) => {
         case GET:
             const get = { data: action.data };
             return get
-        // console.log(get, "reducer");
         case CYOI_RESET:
-            console.log(state, "クリック前");
             console.log(action.id, "クリックしたid");
             const newdata = state.filter(state => {
                 return state.id !== action.id;
@@ -40,9 +38,8 @@ const reducer = (state = [], action) => {
         case KORE_RESET:
             console.log(state, "クリック前");
             const newkore = state.filter(state => {
-                return state.id !== state.checked;//?????????
+                return state.id == 2//?????????
             });
-            console.log(newkore, "newkore");
             return newkore;
         default:
             return state;
